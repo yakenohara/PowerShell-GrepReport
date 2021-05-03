@@ -18,7 +18,7 @@
 ::-----------------------------------------------------------</License>
 
 ::定数
-set ps1FileName=MakeGrepReport.ps1
+set ps1FileName=GrepReport.ps1
 
 ::初期化
 set ps1FileFullPath=%~dp0%ps1FileName%
