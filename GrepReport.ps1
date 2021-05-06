@@ -52,9 +52,15 @@ $enc_name = "utf-8" # 出力ファイルのテキストエンコード
 $indent = '    '
 # ---------------------------------------------------------------</Settings>
 
+# Argument check
+if ($Args.count -lt 1){
+    Write-Error ("[error] directory not specified.")
+    return
+}
+
 # 検索対象となる `System.IO.FileInfo` オブジェクトリストを作成
 $fInfoToGrep = 
-    Get-ChildItem -Path .\ -Recurse -File -Include $incFiles -Exclude $excFiles | # 指定ファイル名、指定除外ファイル名で `System.IO.FileInfo` オブジェクトリストを取得
+    Get-ChildItem -Path $Args[0] -Recurse -File -Include $incFiles -Exclude $excFiles | # 指定ファイル名、指定除外ファイル名で `System.IO.FileInfo` オブジェクトリストを取得
     Sort-Object -Property FullName # フルパスの名称で sort
 
 # 対象件数が 0 だった場合は終了

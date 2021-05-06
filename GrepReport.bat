@@ -24,4 +24,4 @@ set ps1FileName=GrepReport.ps1
 set ps1FileFullPath=%~dp0%ps1FileName%
 
 ::Call powershell
-powershell -ExecutionPolicy Bypass "& \"%ps1FileFullPath%\""
+powershell -ExecutionPolicy Bypass "& \"%ps1FileFullPath%\" "".\"""
